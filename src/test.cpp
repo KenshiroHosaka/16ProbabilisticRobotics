@@ -8,5 +8,6 @@
 #include <iostream>
 int main(){
     std::cout << "Hello TravisCI" << std::endl;
+    std::cout << 2*8 << std::endl;
     return 0;
 }
