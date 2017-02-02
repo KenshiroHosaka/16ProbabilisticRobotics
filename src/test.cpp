@@ -9,5 +9,6 @@
 int main(){
     std::cout << "Hello TravisCI" << std::endl;
     std::cout << 2*8 << std::endl;
+    std::cout << 2*3 << std::endl;
     return 0;
 }
