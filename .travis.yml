@@ -1,5 +1,4 @@
 language: cpp
 script:
-    - g++ --version
     - g++ -Wall src/test.cpp
     - ./a.out
