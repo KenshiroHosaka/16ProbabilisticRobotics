@@ -44,7 +44,8 @@ int main(){
             }else{
                 V[i][j] = -10.0;    //ゴール以外の価値は-10.0
             }
-            cout << std::setw(4) << V[i][j] << "|" << std::setw(4) << Puddle[i][j] << " ";
+            //cout << "[" << std::setw(4) << V[i][j] << "|" << std::setw(4) << Puddle[i][j] << "]" << " ";
+            cout << std::setw(4) << V[i][j] << " ";
         }
         cout << endl;
     }
