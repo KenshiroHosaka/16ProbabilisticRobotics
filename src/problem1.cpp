@@ -22,6 +22,8 @@ int main(){
     int COST,PENALTY;
     DATA >> COST >> PENALTY;
     cout << "COST:" << COST <<" PENALTY:" << PENALTY << endl;
+    COST = COST * (-1);
+    PENALTY = PENALTY * (-1);
 
     /// 各要素をファイルから読み取り後、表示
     int x_max = 0 , y_max = 0;
