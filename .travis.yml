@@ -1,4 +1,4 @@
 language: cpp
 script:
-    - g++ -Wall src/test.cpp
+    - g++ -Wall src/problem1.cpp
     - ./a.out
