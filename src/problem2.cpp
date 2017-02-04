@@ -29,7 +29,7 @@ int main(){
 
     DATA >> x_max >> y_max;
     std::vector<std::vector<double> > V( y_max+2 , std::vector<double>(x_max+2 , COST*100) );   //周囲1個分確保する　全部コストよりもすごく小さい値で埋める
-    std::vector<std::vector<double>i > Puddle( y_max+2 , std::vector<double>(x_max+2 , 0.0) );    //水たまり用
+    std::vector<std::vector<double> > Puddle( y_max+2 , std::vector<double>(x_max+2 , 0.0) );    //水たまり用
 
     for(int i=1; i < y_max+1; i++){
         for(int j=1; j < x_max+1; j++){
