@@ -16,7 +16,7 @@ int main(){
 
     /// ファイル入力
     cout << "File open" << endl;
-    std::fstream DATA("src/problem2data.txt");
+    std::fstream DATA("src/problem2Adata.txt");
 
     /// コスト，ペナルティ(ない場合はデータに0を記入)
     int COST,PENALTY;
