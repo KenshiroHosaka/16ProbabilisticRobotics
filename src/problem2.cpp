@@ -1,6 +1,6 @@
 /*
  * problem2.cpp
- * 作成者：Kenshiro.H
+ * 作成者：K.hsk
  * 第8回　問題2改
  */
 #include <iostream>
