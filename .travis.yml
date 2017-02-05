@@ -1,5 +1,5 @@
 language: cpp
 script:
-    - cat src/problem4Adata.txt
+    - cat src/problem4Bdata.txt
     - g++ -Wall src/problem4.cpp
     - ./a.out
