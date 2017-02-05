@@ -37,7 +37,8 @@ https://travis-ci.org/KenshiroHosaka/16ProbabilisticRobotics/builds/198455935
 ![グラフ](src/problem.png)
   
 ##解説  
-　発展課題は問題5のプログラムを使用した．  結果：https://travis-ci.org/KenshiroHosaka/16ProbabilisticRobotics/builds/198457728  
+　発展課題は問題5のプログラムを使用した．  
+ 結果：https://travis-ci.org/KenshiroHosaka/16ProbabilisticRobotics/builds/198457728  
  
 1.  ファイルを読み込む 
 2.  価値を代入する二次元配列(層)をコストよりものすごく小さい値(COSTの10000倍)で埋める．水たまり用，ゴール用の位置を示すための二次元配列(層)も用意する．後での計算を楽にするために計算するところよりも一回り大きな配列を用意する．
