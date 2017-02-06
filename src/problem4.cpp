@@ -39,10 +39,10 @@ int main(){
                 G_i = i;            //ゴールの場所を覚えておく
                 G_j = j;
             }else if( 2 == V[i][j]){
-                V[i][j] = -100.0;    //ゴール以外の価値は-10.0
-                Puddle[i][j] = (double)PENALTY; //がある場所にはペナルティをおく
+                V[i][j] = -100.0;    //ゴール以外の価値は-100.0
+                Puddle[i][j] = (double)PENALTY; //水たまりがある場所にはペナルティをおく
             }else{
-                V[i][j] = -100.0;    //ゴール以外の価値は-10.0
+                V[i][j] = -100.0;    //ゴール以外の価値は-100.0
             }
             cout << std::setw(4) << V[i][j] << " ";
         }
@@ -64,7 +64,7 @@ int main(){
                     TEMP[1] = V[i][j-1] + COST + Puddle[i][j-1]; //左
                     TEMP[2] = V[i+1][j] + COST + Puddle[i+1][j]; //下
                     TEMP[3] = V[i][j+1] + COST + Puddle[i][j+1]; //右
-                    //（COST*100よりも小さいのを省く）
+                    //（COST*10000よりも小さいのを省く）
                     for(int t=0; t<4; t++){
                         if( TEMP[t] > V[0][0] ){
                             TEMP[n] = TEMP[t];

@@ -38,14 +38,14 @@ int main(){
                 V[i][j] = 0.0;      //ゴールの価値は高い
                 GOAL[i][j] = 1;
             }else if( 2 == V[i][j]){            //水たまり
-                V[i][j] = -100.0;               //ゴール以外の価値は-10.0
+                V[i][j] = -100.0;               //ゴール以外の価値は-100.0
                 Puddle[i][j] = (double)PENALTY; //水たまりがある場所にはペナルティをおく
-            }else if( 3 == V[i][j]){            //壁
+            }else if( 3 == V[i][j]){            //立ち入り禁止エリア
                 V[i][j] = COST*10000;
             }else{
-                V[i][j] = -100.0;    //ゴール以外の価値は-10.0
+                V[i][j] = -100.0;               //ゴール以外の価値は-100.0
             }
-            if(V[i][j] > -1000){
+            if(V[i][j] > -1000){                //立ち入り禁止エリアは非表示
                 cout << std::setw(4) << V[i][j] << " ";
             }else{
                 cout << "     ";
@@ -56,7 +56,7 @@ int main(){
     cout << endl << "--START--" << endl ;
 
     /// 各要素の価値を価値反復を用いて計算
-    int count = 0;                          //ループ終了用カウント　前回と同じ値のセルが (x_max*y_max-1)と同じになったらループ終了
+    int count = 0;                          //ループ終了用カウンタ
     std::vector<double> TEMP(4 , 0.0);
     int n=0;
     while(count != (x_max*y_max) ){
@@ -107,7 +107,8 @@ int main(){
                     n=0;
 
                 }else if(GOAL[i][j] == 1){
-                    cout << std::fixed << std::setprecision(1) <<std::setw(6) << V[i][j] << " " ;
+                    cout << "   G   ";
+                    //cout << std::fixed << std::setprecision(1) <<std::setw(6) << V[i][j] << " " ;
                     count += 1;
                 }else{
                     cout << "       ";

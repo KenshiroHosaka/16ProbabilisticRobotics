@@ -38,7 +38,7 @@ int main(){
                 G_i = i;            //ゴールの場所を覚えておく
                 G_j = j;
             }else{
-                V[i][j] = -100.0;    //ゴール以外の価値は-10.0
+                V[i][j] = -100.0;    //ゴール以外の価値は-100.0
             }
             cout << std::setw(4) << V[i][j] << " ";
         }
@@ -47,7 +47,7 @@ int main(){
     cout << endl << "--START--" << endl ;
 
     /// 各要素の価値を価値反復を用いて計算
-    int count = 0;                          //ループ終了用カウント　前回と同じ値のセルが (x_max*y_max-1)と同じになったらループ終了
+    int count = 0;                          //ループ終了用カウンタ
     std::vector<double> TEMP(4 , 0.0);
     int n=0;
     while(count != (x_max*y_max)-1 ){
@@ -60,7 +60,7 @@ int main(){
                     TEMP[1] = V[i][j-1] + COST; //左
                     TEMP[2] = V[i+1][j] + COST; //下
                     TEMP[3] = V[i][j+1] + COST; //右
-                    //（COST*100よりも小さいのを省く）
+                    //（COST*10000よりも小さいのを省く）
                     for(int t=0; t<4; t++){
                         if( TEMP[t] > V[0][0] ){
                             TEMP[n] = TEMP[t];

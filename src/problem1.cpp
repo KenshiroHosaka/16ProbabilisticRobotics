@@ -46,20 +46,16 @@ int main(){
     cout << endl << "--START--" << endl ;
 
     /// 各要素の価値を価値反復を用いて計算
-    int count = 0;                          //ループ終了用カウント　前回と同じ値のセルが (x_max*y_max-1)と同じになったらループ終了
+    int count = 0;                          //ループ終了用カウンタ
     std::vector<double> TEMP(4 , 0);
     while(count != (x_max*y_max)-1 ){
         count = 0;
         for(int i=1; i < y_max+1; i++){
             for(int j=1; j < x_max+1; j++){
                 if( i != G_i || j != G_j ){
-                    //cout << V[i-1][j] << "|" ;
                     TEMP[0] = V[i-1][j] + COST; //上
-                    //cout << V[i][j-1] << "|" ;
                     TEMP[1] = V[i][j-1] + COST; //左
-                    //cout << V[i+1][j] << "|" ;
                     TEMP[2] = V[i+1][j] + COST; //下
-                    //cout << V[i][j+1] << "|" << endl;
                     TEMP[3] = V[i][j+1] + COST; //右
                     for(int t=0; t<3 ; t++){
                         if(TEMP[t]>TEMP[t+1]) TEMP[t+1]=TEMP[t];    //上下左右で値が大きいものを残していく
