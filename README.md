@@ -7,13 +7,13 @@
 ---「~data.txt」内の意味---  
 `-1 -100`     //一つ目の数字は各移動にかかるコスト，二つ目の数字は水たまりのペナルティ(ない場合は0を記入).  
 `3 4`          //一つ目の数字はグラフの横の数，二つ目の数字はグラフの縦の数  
-`3 3 1`       //グラフ左上から順番に並んでる　各数字の意味:0:何もない  
-`0 0 0`       //各数字の意味:1:ゴール  
-`0 2 0`       //各数字の意味:2:水たまり  
-`0 0 0`       //各数字の意味:3:立ち入り禁止エリア  
-
-
-1.　問題1  
+`3 3 1`       //グラフ左上から順番に並んでる　  
+`0 0 0`       // 各数字の意味:0:何もない 1:ゴール 2:水たまり 3:立ち入り禁止エリア  
+`0 2 0`  
+`0 0 0`  
+  プログラムを実行すると読み込んだグラフデータをもとに，初期の価値を表示する．`--START--`が表示されてからは，各要素を一巡したら価値を表示する．最後に収束したら`--end--`を表示する．  
+  
+1.　問題1  
 https://travis-ci.org/KenshiroHosaka/16ProbabilisticRobotics/builds/198312556  
 2.　問題2  
 R=1 :https://travis-ci.org/KenshiroHosaka/16ProbabilisticRobotics/builds/198453786  
@@ -25,7 +25,7 @@ R=1   :https://travis-ci.org/KenshiroHosaka/16ProbabilisticRobotics/builds/1984
 R=10  :https://travis-ci.org/KenshiroHosaka/16ProbabilisticRobotics/builds/198455276  
 R=100 :https://travis-ci.org/KenshiroHosaka/16ProbabilisticRobotics/builds/198455434  
 5.　問題5  
-https://travis-ci.org/KenshiroHosaka/16ProbabilisticRobotics/builds/198455935  
+https://travis-ci.org/KenshiroHosaka/16ProbabilisticRobotics/builds/198455935    
 
 ##発展課題  
 　発展課題として以下のグラフの有限MDP問題を解く.  
@@ -38,8 +38,10 @@ https://travis-ci.org/KenshiroHosaka/16ProbabilisticRobotics/builds/198455935
   
 ##解説  
 　発展課題は問題5のプログラムを使用した．  
- 結果：https://travis-ci.org/KenshiroHosaka/16ProbabilisticRobotics/builds/198457728  
- 
+ 結果：https://travis-ci.org/KenshiroHosaka/16ProbabilisticRobotics/builds/198888392    
+
+  ソースコードの大まかな流れ  
+  
 1.  ファイルを読み込む 
 2.  価値を代入する二次元配列(層)をコストよりものすごく小さい値(COSTの10000倍)で埋める．水たまり用，ゴール用の位置を示すための二次元配列(層)も用意する．後での計算を楽にするために計算するところよりも一回り大きな配列を用意する．
 3.  読み込んだデータをもとに価値の層に初期の価値(-100.0)を代入していく．ゴールの場合は価値の層に0.0を代入し，ゴールの層にフラグを立てる．水たまりの場合は初期の価値を代入しつつ水たまりの層にペナルティを代入する．3があったら立ち入り禁止エリアなので価値の層にCOSTの10000倍を代入する．
