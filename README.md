@@ -11,7 +11,7 @@
 `0 0 0`       // 各数字の意味:0:何もない 1:ゴール 2:水たまり 3:立ち入り禁止エリア  
 `0 2 0`  
 `0 0 0`  
-  プログラムを実行すると読み込んだグラフデータをもとに，初期の価値を表示する．`--START--`が表示されてからは，各要素を一巡したら価値を表示する．最後に収束したら`--end--`を表示する．  
+  プログラムを実行すると読み込んだグラフデータをもとに，初期の価値を表示する．`--START--`が表示されてからは，各要素を一巡したら価値を表示する．最後に収束したら`--end--`を表示する．ゴールは`0`または`0.0`が表示される．  
   
 1.　問題1  
 https://travis-ci.org/KenshiroHosaka/16ProbabilisticRobotics/builds/198312556  
@@ -29,7 +29,7 @@ https://travis-ci.org/KenshiroHosaka/16ProbabilisticRobotics/builds/198455935
 
 ##発展課題  
 　発展課題として以下のグラフの有限MDP問題を解く.  
-
+ 
 + 移動にかかるコストは「-1」
 + 水たまりに入るときのコストは「-100」
 + 第8回スライド中の問題3と同様の遷移条件  
@@ -37,7 +37,7 @@ https://travis-ci.org/KenshiroHosaka/16ProbabilisticRobotics/builds/198455935
 ![グラフ](src/problem.png)
   
 ##解説  
-　発展課題は問題5のプログラムを使用した．  
+　発展課題は問題5のプログラムを使用した．ゴールは`G`と表示される．  
  結果：https://travis-ci.org/KenshiroHosaka/16ProbabilisticRobotics/builds/198888392    
 
   ソースコードの大まかな流れ  
